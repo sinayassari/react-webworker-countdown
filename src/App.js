@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import DatePicker from "react-datepicker";
+import React, {useState} from 'react';
 import './App.css';
+import DueDate from "./Components/DueDate";
 
 function App() {
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <strong>Set a due date</strong>
+      <DatePicker
+      selected={startDate}
+      onChange={date => setStartDate(date)}
+      showTimeSelect
+      timeFormat="HH:mm:ss"
+      timeIntervals={1}
+      timeCaption="time"
+      dateFormat="MMMM d, yyyy h:mm aa"
+    />
+    <DueDate dueDate={startDate}/>
     </div>
   );
 }

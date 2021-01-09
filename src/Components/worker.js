@@ -1,11 +1,11 @@
-import * as Comlink from 'comlink';
-
-
-class CountDownClass {
-    calculateDueDate() {
-        console.log('sina')
-    }
-}
-
-Comlink.expose(CountDownClass);
-
+// function timedCount() {
+//     onmessage = function (event) {
+//         console.log('from-worker', event.data.dueDate)
+//         postMessage({
+//
+//         });
+//     }
+//     setTimeout("timedCount()", 1000);
+// }
+//
+// timedCount();
